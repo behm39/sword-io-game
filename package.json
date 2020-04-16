@@ -1,0 +1,19 @@
+{
+  "name": "sword-io-game",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/behm39/sword-io-game.git"
+  },
+  "author": "Michael Behm",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/behm39/sword-io-game/issues"
+  },
+  "homepage": "https://github.com/behm39/sword-io-game#readme"
+}
