@@ -54,6 +54,7 @@ class Game {
         let data = {
             t: Date.now(),
             me: {
+                id: player.socket.id,
                 x: player.pos.x,
                 y: player.pos.y
             },
@@ -61,6 +62,7 @@ class Game {
         };
         for (let other of others) {
             data.others.push({
+                id: other.socket.id,
                 x: other.pos.x,
                 y: other.pos.y
             });
