@@ -5,6 +5,10 @@ function handleSockets(io) {
         socket.on('disconnect', () => {
             console.log(`A user has disconnected: ${socket.id}`);
         });
+
+        socket.on('input', (data) => {
+            console.log(data);
+        });
     });
 }
 

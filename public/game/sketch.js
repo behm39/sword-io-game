@@ -1,4 +1,4 @@
-var io = io();
+var socket = io();
 var stateHandler;
 
 function setup() {
