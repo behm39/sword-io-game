@@ -12,7 +12,6 @@ class StateHandler {
     }
 
     getCurrentState() {
-        // TODO: implement me
         if (this.gameUpdates.length > 1) {
             this.gameUpdates.splice(0, this.gameUpdates.length - 1);
         }

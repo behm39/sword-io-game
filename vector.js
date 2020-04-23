@@ -5,6 +5,12 @@ class Vector {
         this.y = y;
     }
 
+    static Mult(vector, c) {
+        let v = vector.clone();
+        v.mult(c);
+        return v;
+    }
+
     clone() {
         return new Vector(this.x, this.y);
     }

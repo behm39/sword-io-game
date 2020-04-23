@@ -19,10 +19,35 @@ class Player {
         }
     }
 
-    update() {
-        this.vel.add(this.acc);
-        this.pos.add(this.vel);
+    applyForce(force) {
+        this.acc.add(force);
+    }
+
+    update(dt) {
+        const movementSpeed = 100;
+        for (let key of this.keyboard.getKeysPressed()) {
+            switch (key) {
+                case 'w':
+                    this.applyForce(new Vector(0, -movementSpeed));
+                    break;
+                case 'a':
+                    this.applyForce(new Vector(-movementSpeed, 0));
+                    break;
+                case 's':
+                    this.applyForce(new Vector(0, movementSpeed));
+                    break;
+                case 'd':
+                    this.applyForce(new Vector(movementSpeed, 0));
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        this.vel.add(Vector.Mult(this.acc, dt));
+        this.pos.add(Vector.Mult(this.vel, dt));
         this.acc.mult(0);
+        this.vel.mult(0.99);
     }
 
 }

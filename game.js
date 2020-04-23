@@ -4,6 +4,8 @@ class Game {
 
     constructor() {
         this.players = new Map();
+        this.lastUpdateTime = Date.now();
+        setInterval(this.update.bind(this), 1000 / 60);
     }
 
     addPlayer(socketId) {
@@ -19,8 +21,12 @@ class Game {
     }
 
     update() {
+        const now = Date.now();
+        const dt = (now - this.lastUpdateTime) / 1000;
+        this.lastUpdateTime = now;
+
         for (let playerPair of this.players) {
-            playerPair[1].update();
+            playerPair[1].update(dt);
         }
     }
 
