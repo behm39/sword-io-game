@@ -20,7 +20,9 @@ function keyPressed() {
         default:
             break;
     }
-    socket.emit('input', { pressed: true, key: key });
+    if (key != null) {
+        socket.emit('input', { pressed: true, key: key });
+    }
 }
 
 function keyReleased() {
@@ -45,5 +47,7 @@ function keyReleased() {
         default:
             break;
     }
-    socket.emit('input', { pressed: false, key: key });
+    if (key != null) {
+        socket.emit('input', { pressed: false, key: key });
+    }
 }
