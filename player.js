@@ -3,8 +3,8 @@ var Vector = require('./vector');
 
 class Player {
 
-    constructor(id) {
-        this.id = id;
+    constructor(socket) {
+        this.socket = socket;
         this.keyboard = new Keyboard();
         this.pos = new Vector(Math.random() * 600, Math.random() * 600);
         this.vel = new Vector();
