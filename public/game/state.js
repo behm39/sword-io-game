@@ -1,17 +1,22 @@
 class StateHandler {
     constructor() {
-
+        this.gameUpdates = [];
     }
+
+    addUpdate(t, me, others) {
+        this.gameUpdates.push({
+            t: t,
+            me: me,
+            others: others
+        });
+    }
+
     getCurrentState() {
         // TODO: implement me
-        return {
-            t: 42,
-            me: { x: 200, y: 200, },
-            others: [
-                { x: 150, y: 100 },
-                { x: 300, y: 350 }
-            ]
-        };
+        if (this.gameUpdates.length > 1) {
+            this.gameUpdates.splice(0, this.gameUpdates.length - 1);
+        }
+        return this.gameUpdates[this.gameUpdates.length - 1];
     }
 }
 

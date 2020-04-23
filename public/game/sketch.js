@@ -3,7 +3,7 @@ var stateHandler;
 
 function setup() {
     stateHandler = new StateHandler();
-    createCanvas(400, 400);
+    createCanvas(600, 600);
 }
 
 function draw() {
@@ -23,3 +23,7 @@ function renderPlayer(player, thisPlayer=false) {
     thisPlayer ? fill(255) : fill(0);
     ellipse(player.x, player.y, 32);
 }
+
+socket.on('heartbeat', (data) => {
+    stateHandler.addUpdate(data.t, data.me, data.others);
+}); 
