@@ -24,7 +24,7 @@ class Player {
     }
 
     update(dt) {
-        const movementSpeed = 100;
+        const movementSpeed = 500;
         for (let key of this.keyboard.getKeysPressed()) {
             switch (key) {
                 case 'w':
